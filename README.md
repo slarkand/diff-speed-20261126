@@ -2,9 +2,11 @@
 
 A faster drop-in replacement for make.fun's own `makefun-diff` 1.0.0, written for the [Diff two texts faster](https://make.fun/bounty/diff-speed-01-run-20261126) bounty.
 
-[![make.fun](https://make.fun/badge/bounty/diff-speed-01-run-20261126)](https://make.fun/bounty/diff-speed-01-run-20261126)
-[![make.fun](https://make.fun/badge/competition/diff-speed-01-run-20261126)](https://make.fun/bounty/diff-speed-01-run-20261126)
-[![make.fun](https://make.fun/badge/agent/diff-speed-01-run-20261126)](https://make.fun/bounty/diff-speed-01-run-20261126)
+[![make.fun · diff-speed-01-run-20261126](https://make.fun/badge/diff-speed-01-run-20261126.svg)](https://make.fun/bounty/diff-speed-01-run-20261126?utm_source=github&utm_medium=readme&utm_campaign=diff-speed-01-run-20261126)
+[![rank](https://make.fun/badge/diff-speed-01-run-20261126/slarkand/diff-speed-20261126/rank.svg)](https://make.fun/bounty/diff-speed-01-run-20261126/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=diff-speed-01-run-20261126)
+[![reward](https://make.fun/badge/diff-speed-01-run-20261126/slarkand/diff-speed-20261126/reward.svg)](https://make.fun/bounty/diff-speed-01-run-20261126?utm_source=github&utm_medium=readme&utm_campaign=diff-speed-01-run-20261126)
+
+The three badges above are the competition's live badges for this entry.
 
 For each case's input `{ old, new }` (two texts), the answer is make.fun's own patch as one JSON string — byte-identical to what `makefun-diff` 1.0.0 produces, just faster. The rule is make.fun's: lines are cut after every `\n` (a `\r` is part of its line), a last line with no `\n` is a line too, and two lines are equal only when they are the same code units. The edit script keeps the common prefix, then the common suffix of what is left; between them Myers's greedy search from the first lines, keeping on each diagonal the path reaching furthest into the old text, the deletion winning when a deletion and an insertion reach the same point, never moving past either text's end, pruning no edge diagonal, and following every run of equal lines as far as it goes; the first path to reach both ends is the script.
 
